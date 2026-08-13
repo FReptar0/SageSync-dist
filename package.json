@@ -1,0 +1,51 @@
+{
+  "name": "sagesync",
+  "version": "1.0.0",
+  "description": "Aplicación de consola para sincronizar inventario de Sage300 con Fracttal",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "node src/main.js",
+    "sync-only": "node src/app.js",
+    "sync": "node src/sync.js",
+    "sync:preview": "node src/sync.js --dry-run",
+    "sync:moved": "node src/sync.js --moved",
+    "sync:moved:preview": "node src/sync.js --moved --dry-run",
+    "maintenance": "node src/maintenance.js",
+    "maintenance:clean": "node src/maintenance.js clean-logs",
+    "maintenance:token": "node src/maintenance.js renew-token",
+    "maintenance:backup": "node src/maintenance.js backup-config",
+    "install-service": "node src/service-installer.js install",
+    "uninstall-service": "node src/service-installer.js uninstall",
+    "test": "jest",
+    "test:fracttal": "jest tests/services/fracttalClient.test.js",
+    "test:sage": "jest tests/services/sageService.test.js",
+    "test:integration": "jest tests/integration/",
+    "test:credentials": "node tests/manual/test-credentials.js",
+    "test:workflow": "node tests/manual/test-workflow.js",
+    "inspect:warehouse": "node tests/manual/check-warehouse.js",
+    "inspect:warehouses": "node tests/manual/list-warehouses.js"
+  },
+  "dependencies": {
+    "axios": "^1.6.0",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "moment": "^2.29.4",
+    "mssql": "^10.0.1",
+    "node-cron": "^3.0.3",
+    "node-windows": "^1.0.0-beta.8",
+    "winston": "^3.11.0"
+  },
+  "devDependencies": {
+    "jest": "^29.7.0",
+    "supertest": "^6.3.4"
+  },
+  "keywords": [
+    "sage300",
+    "fracttal",
+    "inventory",
+    "sync",
+    "erp"
+  ],
+  "author": "Fernando Rodriguez Memije <fmemije00@gmail.com>",
+  "license": "PROPRIETARY"
+}
